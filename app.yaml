@@ -2,17 +2,17 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: openfga
-  namespace: openfga
+  namespace: argo
 spec:
   project: default
 
   source:
     repoURL: https://openfga.github.io/helm-charts
     chart: openfga
-    targetRevision: "*"   # or specific version
+    targetRevision: latest
     helm:
       valueFiles:
-        - openfga-values.yaml
+        - https://raw.githubusercontent.com/bratva-gzp/openfga/main/openfga-values.yaml
 
   destination:
     server: https://kubernetes.default.svc
