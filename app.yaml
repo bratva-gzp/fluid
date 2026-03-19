@@ -7,12 +7,12 @@ spec:
   project: default
 
   source:
-    repoURL: https://openfga.github.io/helm-charts
-    chart: openfga
-    targetRevision: 0.5.0   # ⚠️ replace with actual version
+    repoURL: https://github.com/bratva-gzp/openfga.git
+    targetRevision: main   # ✅ NOT latest
+    path: .
     helm:
       valueFiles:
-        - https://raw.githubusercontent.com/bratva-gzp/openfga/main/openfga-values.yaml
+        - openfga-values.yaml
 
   destination:
     server: https://kubernetes.default.svc
