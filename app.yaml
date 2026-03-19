@@ -9,7 +9,7 @@ spec:
   source:
     repoURL: https://openfga.github.io/helm-charts
     chart: openfga
-    targetRevision: latest
+    targetRevision: 0.5.0   # ✅ replace with a valid version
     helm:
       valueFiles:
         - https://raw.githubusercontent.com/bratva-gzp/openfga/main/openfga-values.yaml
