@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: openfga
-  namespace: argocd
+  namespace: openfga
 spec:
   project: default
 
