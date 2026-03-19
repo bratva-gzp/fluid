@@ -1,0 +1,26 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: openfga
+  namespace: argocd
+spec:
+  project: default
+
+  source:
+    repoURL: https://openfga.github.io/helm-charts
+    chart: openfga
+    targetRevision: "*"   # or specific version
+    helm:
+      valueFiles:
+        - openfga-values.yaml
+
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: openfga
+
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
