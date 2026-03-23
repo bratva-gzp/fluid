@@ -1,0 +1,23 @@
+openfga:
+  enabled: true
+  endpoint: http://openfga.openfga:8080
+  storeId: YOUR_STORE_ID   # 🔴 paste here
+  apiToken: MYPreSharedToken1
+
+repositoryCred:
+  user: kubedrona
+  password: b0d2dd30-cca5-48ee-aa01-45a94fdc8751
+  mail: info@coredge.io
+
+externalIP: 172.16.108.207   # your node IP
+releaseTag: 2025-06-17       # NEVER use latest
+
+adminportal:
+  image: "core42-admin"
+  service:
+    nodePort: "32600"
+
+userPortal:
+  image: "core42-console"
+  service:
+    nodePort: "32500"
